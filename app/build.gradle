@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        applicationId "com.aukomn.myopeneye"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api project(':library-network')
+    api project(':lib-res')
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation "androidx.palette:palette:1.0.0"
+    implementation 'com.google.android.material:material:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation project(path: ':flutter')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVer"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVer"
+    // implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVer"
+    //  implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjavaVer"
+    //  implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVer"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVer"
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    implementation  'com.scwang.smart:refresh-layout-kernel:2.0.1'
+    implementation  'com.scwang.smart:refresh-header-material:2.0.1'
+    implementation  'com.scwang.smart:refresh-footer-classics:2.0.1'
+    implementation  'com.scwang.smart:refresh-footer-ball:2.0.1'
+    compile 'com.github.bumptech.glide:glide:4.11.0'
+    implementation "androidx.core:core-ktx:+"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //GSYVideoPlayer
+    implementation 'com.shuyu:GSYVideoPlayer:7.1.5'
+    implementation 'com.classic.adapter:commonadapter:2.0'
+    implementation "jp.wasabeef:glide-transformations:4.0.1"
+    //wechat
+
+
+}
+repositories {
+    mavenCentral()
+}
